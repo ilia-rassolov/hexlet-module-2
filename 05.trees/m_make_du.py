@@ -24,7 +24,7 @@ tree = mkdir('/', [
             mkfile('nginx.conf', {'size': 800}),
         ]),
         mkdir('consul', [
-            mkfile('.config.json', {'size': 1200}),
+            mkfile('.config.py.json', {'size': 1200}),
             mkfile('data', {'size': 8200}),
             mkfile('raft', {'size': 80}),
         ]),

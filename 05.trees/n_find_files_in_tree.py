@@ -26,7 +26,7 @@ tree = mkdir('/', [
                     mkfile('nginx.conf', {'size': 800}),
                 ]),
                 mkdir('consul', [
-                    mkfile('config.json'),
+                    mkfile('config.py.json'),
                     mkfile('dagtaos'),
                     mkfile('data1'),
                 ]),
