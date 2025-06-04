@@ -2,34 +2,34 @@
 В этом упражнении вам предстоит написать тесты для функций управления пользователями. Функции что вам нужно
 будет протестировать:
 
-create_user() - принимает словарь пользователей users, имя пользователя и его почту. Добавляет пользователя в словарь
+create_user() - принимает словарь пользователей users.json, имя пользователя и его почту. Добавляет пользователя в словарь
 и возвращает пользователя, либо возвращает None, если такой уже существует.
-get_user() - принимает словарь пользователей users и имя пользователя. Возвращает пользователя либо None, если
+get_user() - принимает словарь пользователей users.json и имя пользователя. Возвращает пользователя либо None, если
 такого нет.
-update_user() - принимает словарь пользователей users, имя пользователя и новую почту. Обновляет данные пользователя
+update_user() - принимает словарь пользователей users.json, имя пользователя и новую почту. Обновляет данные пользователя
  и возвращает нового пользователя, либо None если такого нет.
-delete_user() - принимает словарь пользователей users и имя пользователя. Удаляет его из словаря. При повторной
+delete_user() - принимает словарь пользователей users.json и имя пользователя. Удаляет его из словаря. При повторной
 попытке удаления ничего не происходит.
-list_users() - принимает словарь пользователей users и возвращает подробный список в виде [{"username": username,
+list_users() - принимает словарь пользователей users.json и возвращает подробный список в виде [{"username": username,
  "email": email}, {..}]
 
-users = {"alice": {"email": "alice@mail.com"}}
+users.json = {"alice": {"email": "alice@mail.com"}}
 
-create_user(users, "phil", "phil@mail.com")
-users # {"alice": {"email": "alice@mail.com"}, "phil": {"email": "phil@mail.com"}}
-create_user(users, "phil", "phil@mail.com") # None
-update_user(users, "john", "john@mail.com") # None
-update_user(users, "phil", "new_mail@mail.com")
-user = get_user(users, "phil")
-user["email"] # "new_mail@mail.com"
-get_user(users, "wrong_user") # None
-delete_user(users, "phil")
-delete_user(users, "phil")
-list_users(users) # [{"username": "alice", "email": "alice@mail.com"}]
+create_user(users.json, "phil", "phil@mail.com")
+users.json # {"alice": {"email": "alice@mail.com"}, "phil": {"email": "phil@mail.com"}}
+create_user(users.json, "phil", "phil@mail.com") # None
+update_user(users.json, "john", "john@mail.com") # None
+update_user(users.json, "phil", "new_mail@mail.com")
+users = get_user(users.json, "phil")
+users["email"] # "new_mail@mail.com"
+get_user(users.json, "wrong_user") # None
+delete_user(users.json, "phil")
+delete_user(users.json, "phil")
+list_users(users.json) # [{"username": "alice", "email": "alice@mail.com"}]
 
 Подсказки
 Один из тестов уже написан в упражнении. Используйте его как образец при написании своих тестов.
-Используйте фикстуру users в ваших тестах
+Используйте фикстуру users.json в ваших тестах
 '''
 
 import pytest
